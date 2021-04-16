@@ -88,7 +88,7 @@ class ROIMaskHead(torch.nn.Module):
             if not self.cfg.MODEL.PANOPTIC.PS_ON:
                 return feature_fcn_conv4, result, {}
             else:
-                return feature_fcn_conv4, result, {}, {}, {}, roi_feature, result[0].get_field("mask"), result[0].get_field("labels"), None, None
+                return feature_fcn_conv4, result, {}, mask_logits, None, roi_feature, result[0].get_field("mask"), result[0].get_field("labels"), None
 
 
         proposal_boxes = positive_bboxes

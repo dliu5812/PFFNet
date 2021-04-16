@@ -45,7 +45,7 @@ class CombinedROIHeads(torch.nn.ModuleDict):
                 x, detections, loss_mask = self.mask(mask_features, detections, targets)
                 losses.update(loss_mask)
                 return x, detections, losses
-            x, detections, loss_mask, mask_box_fuse, bboxes, roi_feature, selected_mask, labels, maskiou_targets \
+            x, detections, loss_mask, masks, bboxes, roi_feature, selected_mask, labels, maskiou_targets \
                 = self.mask(mask_features, detections, bboxes_train, targets)
             losses.update(loss_mask)
 
@@ -53,7 +53,7 @@ class CombinedROIHeads(torch.nn.ModuleDict):
                 loss_maskiou, detections = self.maskiou(roi_feature, detections, selected_mask, labels, maskiou_targets)
                 losses.update(loss_maskiou)
 
-            return x, detections, losses, mask_box_fuse, bboxes
+            return x, detections, losses, masks, bboxes
 
 
 def build_roi_heads(cfg, in_channels):
