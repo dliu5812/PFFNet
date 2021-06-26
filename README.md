@@ -52,6 +52,8 @@ For training the model on different datasets in our papers, please refer to:
 
 Please refer to `./inference` for the code on this part.
 
+To visualize the instance-level mask annotations/predictions, please run `python color_instance.py`.
+
 ### TCGA-Kumar
 
 For the experiment on TCGA-Kumar, we rename the testing images and the details are in [Link](https://cloudstor.aarnet.edu.au/plus/s/Tpd3d6H2XxUlkl4).

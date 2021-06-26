@@ -31,6 +31,7 @@ def infer_tcga(wts_root, out_pred_root):
     test_root_name = ''
 
 
+
     # output saving root
     mkdir(out_pred_root)
 
